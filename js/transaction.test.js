@@ -18,3 +18,7 @@ describe('transaction types:', () => {
   });
 });
 
+test('a transaction has an amount', () => {
+  expect(testCreditTransaction.amount).toBe(500);
+});
+
