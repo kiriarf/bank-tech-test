@@ -35,7 +35,7 @@ I would like to see my account statement.
 
 | Class         | Responsibilities      | Collaborators   |
 | ------------- | --------------------- | --------------- |
-| 1. Account    | 1. Deposit            | 1. ATM          |
+| 1. Account    | 1. Deposit            |                 |
 |               | 2. Withdraw           |                 |
 |               | 3. Have balance       |                 |
 | 2. ATM        | 1. Generate Statement | 1. Account      |
