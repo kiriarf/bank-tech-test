@@ -9,11 +9,11 @@ A simple JavaScript Console app that allows users to query their bank balance, a
 2. Clone this repository: ```git clone git@github.com:kiriarf/bank-tech-test.git && cd bank-tech-test```
 2. In your terminal, run ```node```
 3. In Node console, ```require``` the files: 
-```
-const Transaction = require('./js/transaction');
-const Account = require('./js/account');
-const Atm = require('./js/atm');
-```
+  ```
+  const Transaction = require('./js/transaction');
+  const Account = require('./js/account');
+  const Atm = require('./js/atm');
+  ```
 
 ### User Stories
 
