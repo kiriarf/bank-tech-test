@@ -3,6 +3,7 @@ const Transaction = require('./transaction');
 class Account {
   constructor() {
     this.balance = 0;
+    this.transactions = [];
   }
 
   deposit(amount) {
@@ -22,6 +23,7 @@ class Account {
   #createTransaction(type, amount) {
     const transaction = new Transaction(type, amount);
     transaction.balance = this.balance;
+    this.transactions.push(transaction);
   }
 
 }

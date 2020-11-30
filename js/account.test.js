@@ -63,3 +63,10 @@ describe('withdrawals', () => {
     expect(() => testAccount.withdraw(250)).toThrow('Insufficient balance for this operation');
   });
 });
+
+test('an account has an array of transactions', () => {
+  const newTestAccount = new Account();
+  newTestAccount.deposit(2);
+  newTestAccount.withdraw(1);
+  expect(newTestAccount.transactions.length).toBe(2);
+});
