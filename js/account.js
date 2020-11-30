@@ -11,8 +11,8 @@ class Account {
     if (this.balance - amount >= 0) {
       this.balance -= amount;
     } else {
-      throw 'Insufficient balance for this operation'
-    };
+      throw new Error('Insufficient balance for this operation');
+    }
   }
 }
 
