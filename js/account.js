@@ -6,20 +6,24 @@ class Account {
   }
 
   deposit(amount) {
-    const transaction = new Transaction('credit', amount);
     this.balance += amount;
-    transaction.balance = this.balance;
+    this.#createTransaction('credit', amount);
   }
 
   withdraw(amount) {
     if (this.balance - amount >= 0) {
-      const transaction = new Transaction('debit', amount);
       this.balance -= amount;
-      transaction.balance = this.balance;
+      this.#createTransaction('debit', amount);
     } else {
       throw new Error('Insufficient balance for this operation');
     }
   }
+
+  #createTransaction(type, amount) {
+    const transaction = new Transaction(type, amount);
+    transaction.balance = this.balance;
+  }
+
 }
 
 module.exports = Account;
