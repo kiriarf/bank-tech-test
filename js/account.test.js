@@ -34,12 +34,17 @@ describe('deposits', () => {
     const creditType = 'credit';
     expect(Transaction.mock.calls[0][0]).toEqual(creditType);
   });
+
+  test('sets a transaction\'s balance to be equal to the Account balance', () => {
+    testAccount.deposit(1);
+    expect(Transaction.mock.instances[0]['balance']).toEqual(testAccount.balance)
+  });
 });
 
 describe('withdrawals', () => {
   test('withdrawing cash decreases the balance', () => {
     testAccount.withdraw(300);
-    expect(testAccount.balance).toBe(250);
+    expect(testAccount.balance).toBe(251);
   });
 
   test('generates a debit transaction', () => {
@@ -47,6 +52,11 @@ describe('withdrawals', () => {
     expect(Transaction).toHaveBeenCalledTimes(1);
     const debitType = 'debit';
     expect(Transaction.mock.calls[0][0]).toEqual(debitType);
+  });
+
+  test('sets a transaction\'s balance to be equal to the Account balance', () => {
+    testAccount.withdraw(1);
+    expect(Transaction.mock.instances[0]['balance']).toEqual(testAccount.balance)
   });
 
   test('cannot withdraw below 0', () => {
