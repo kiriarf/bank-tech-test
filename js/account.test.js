@@ -11,7 +11,9 @@ test('depositing cash increases the balance', () => {
   expect(testAccount.balance).toBe(500);
 });
 
-test('withdrawing cash decreases the balance', () => {
-  testAccount.withdraw(300);
-  expect(testAccount.balance).toBe(200);
+describe('withdrawals', () => {
+  test('withdrawing cash decreases the balance', () => {
+    testAccount.withdraw(300);
+    expect(testAccount.balance).toBe(200);
+  });
 });
