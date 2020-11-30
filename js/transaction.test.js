@@ -11,7 +11,7 @@ describe('transaction types:', () => {
   test('a credit transaction has a type credit', () => {
     expect(testCreditTransaction.type).toBe('credit');
   });
-  
+
   test('a debit transaction has a type debit', () => {
     const testDebitTransaction = new Transaction('debit', 300);
     expect(testDebitTransaction.type).toBe('debit');
@@ -25,4 +25,3 @@ test('a transaction has an amount', () => {
 test('a transaction has a balance 0 by default', () => {
   expect(testCreditTransaction.balance).toBe(0);
 });
-

@@ -1,5 +1,5 @@
 const Account = require('./account');
-const Transaction = require('./transaction')
+const Transaction = require('./transaction');
 
 const testAccount = new Account();
 
@@ -10,12 +10,11 @@ const testAccount = new Account();
 //   });
 // });
 
-jest.mock('./transaction')
+jest.mock('./transaction');
 
 beforeEach(() => {
   Transaction.mockClear();
 });
-
 
 test('has a balance of 0 when created', () => {
   expect(testAccount.balance).toBe(0);
@@ -37,19 +36,20 @@ describe('deposits', () => {
   });
 });
 
-
 describe('withdrawals', () => {
   test('withdrawing cash decreases the balance', () => {
     testAccount.withdraw(300);
     expect(testAccount.balance).toBe(250);
-    // Check if a transaction is created
+  });
+
+  test('generates a debit transaction', () => {
+    testAccount.withdraw(1);
     expect(Transaction).toHaveBeenCalledTimes(1);
-    // Check if the transaction created has type credit
     const debitType = 'debit';
     expect(Transaction.mock.calls[0][0]).toEqual(debitType);
   });
 
   test('cannot withdraw below 0', () => {
-    expect(() => testAccount.withdraw(251)).toThrow('Insufficient balance for this operation');
+    expect(() => testAccount.withdraw(250)).toThrow('Insufficient balance for this operation');
   });
 });
