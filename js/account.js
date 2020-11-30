@@ -8,7 +8,11 @@ class Account {
   }
 
   withdraw(amount) {
-    this.balance -= amount;
+    if (this.balance - amount >= 0) {
+      this.balance -= amount;
+    } else {
+      throw 'Insufficient balance for this operation'
+    };
   }
 }
 

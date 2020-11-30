@@ -16,4 +16,8 @@ describe('withdrawals', () => {
     testAccount.withdraw(300);
     expect(testAccount.balance).toBe(200);
   });
+
+  test('cannot withdraw below 0', () => {
+    expect(() => testAccount.withdraw(201)).toThrow("Insufficient balance for this operation");
+  });
 });
