@@ -11,6 +11,7 @@ class Account {
 
   withdraw(amount) {
     if (this.balance - amount >= 0) {
+      let transaction = new Transaction('debit', amount);
       this.balance -= amount;
     } else {
       throw new Error('Insufficient balance for this operation');

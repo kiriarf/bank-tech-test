@@ -42,6 +42,11 @@ describe('withdrawals', () => {
   test('withdrawing cash decreases the balance', () => {
     testAccount.withdraw(300);
     expect(testAccount.balance).toBe(250);
+    // Check if a transaction is created
+    expect(Transaction).toHaveBeenCalledTimes(1);
+    // Check if the transaction created has type credit
+    const debitType = 'debit';
+    expect(Transaction.mock.calls[0][0]).toEqual(debitType);
   });
 
   test('cannot withdraw below 0', () => {
