@@ -33,10 +33,14 @@ I would like to see my account statement.
 ### Diagrams
 #### Class Diagram
 
-| Class         | Responsibilities      | Collaborators   |
-| ------------- | --------------------- | --------------- |
-| 1. Account    | 1. Deposit            |                 |
-|               | 2. Withdraw           |                 |
-|               | 3. Have balance       |                 |
-| 2. ATM        | 1. Generate Statement | 1. Account      |
-|               | 2. Print Statement    |                 |
+| Class          | Responsibilities       | Collaborators   |
+| -------------- | ---------------------- | --------------- |
+| 1. Transaction | 1. Have a date         |                 | 
+|                | 2. Have a type         |                 |
+|                | 3. Have an amount      |                 |
+| 2. Account     | 1. Deposit             | 1. Transaction  |
+|                | 2. Withdraw            |                 |
+|                | 3. Have balance        |                 |
+|                | 4. Stores transactions |                 |
+| 3. ATM         | 1. Generate Statement  | 1. Account      |
+|                | 2. Print Statement     |                 |
