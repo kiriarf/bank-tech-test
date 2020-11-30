@@ -1,6 +1,7 @@
 class Transaction {
-  constructor() {
+  constructor(type) {
     this.date = new Date(Date.now()).toLocaleDateString();
+    this.type = type;
   }
 }
 
