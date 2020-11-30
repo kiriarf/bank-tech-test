@@ -38,6 +38,7 @@ I would like to see my account statement.
 | 1. Transaction | 1. Have a date         |                 | 
 |                | 2. Have a type         |                 |
 |                | 3. Have an amount      |                 |
+|                | 4. Have a balance      |                 |
 | 2. Account     | 1. Deposit             | 1. Transaction  |
 |                | 2. Withdraw            |                 |
 |                | 3. Have balance        |                 |
