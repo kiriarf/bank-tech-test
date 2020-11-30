@@ -37,4 +37,5 @@ I would like to see my account statement.
 | ------------- | ------------------ | --------------- |
 | 1. Account    | 1. Deposit         | 1. ATM          |
 |               | 2. Withdraw        |                 |
+|               | 3. Have balance    |                 |
 | 2. ATM        | 1. Print Statement | 1. Account      |
