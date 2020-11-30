@@ -22,3 +22,7 @@ test('a transaction has an amount', () => {
   expect(testCreditTransaction.amount).toBe(500);
 });
 
+test('a transaction has a balance 0 by default', () => {
+  expect(testCreditTransaction.balance).toBe(0);
+});
+
