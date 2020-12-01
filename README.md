@@ -67,3 +67,5 @@ I would like to see my account statement.
 |                | 4. Stores transactions |                 |
 | 3. ATM         | 1. Generate Statement  | 1. Account      |
 |                | 2. Print Statement     |                 |
+|                | 3. Take money in       |                 |
+|                | 4. Give money out      |                 |   
