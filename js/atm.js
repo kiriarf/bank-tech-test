@@ -15,7 +15,8 @@ class ATM {
   }
 
   printBalance() {
-    return `Current balance: £${this.account.balance.toFixed(2)}`;
+    console.log(`Current balance: £${this.account.balance.toFixed(2)}`);
+    // return `Current balance: £${this.account.balance.toFixed(2)}`;
   }
 
   printStatement() {

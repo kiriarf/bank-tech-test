@@ -1,6 +1,7 @@
 const ATM = require('./atm');
 
 const testATM = new ATM();
+const consoleSpy = jest.spyOn(console, 'log');
 
 test('you can put money into an ATM to make a deposit', () => {
   const accountDepositFunctionSpy = jest.spyOn(testATM.account, 'deposit');
@@ -18,12 +19,11 @@ test('ATM can print out the current balance of the account', () => {
   const accountBalanceGetterSpy = jest.spyOn(testATM.account, 'balance', 'get');
   testATM.printBalance();
   expect(accountBalanceGetterSpy).toHaveBeenCalled();
-  expect(testATM.printBalance()).toEqual('Current balance: £50.00');
+  expect(consoleSpy).toHaveBeenCalledWith('Current balance: £50.00');
 });
 
 test('ATM can print a history of transactions', () => {
   const accountTransactionsSpy = jest.spyOn(testATM.account, 'transactions', 'get');
-  const consoleSpy = jest.spyOn(console, 'log');
   testATM.printStatement();
   expect(accountTransactionsSpy).toHaveBeenCalled();
   const today = new Date(Date.now()).toLocaleDateString();
