@@ -25,7 +25,6 @@ class Account {
     transaction.balance = this.balance;
     this.transactions.push(transaction);
   }
-
 }
 
 module.exports = Account;
