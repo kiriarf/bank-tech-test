@@ -15,7 +15,7 @@ class Account {
   }
 
   get transactions() {
-    return this.pastTransactions
+    return this.pastTransactions;
   }
 
   deposit(amount) {
