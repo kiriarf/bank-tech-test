@@ -37,7 +37,7 @@ describe('deposits', () => {
 
   test('sets a transaction\'s balance to be equal to the Account balance', () => {
     testAccount.deposit(1);
-    expect(Transaction.mock.instances[0]['balance']).toEqual(testAccount.balance)
+    expect(Transaction.mock.instances[0].balance).toEqual(testAccount.balance);
   });
 });
 
@@ -49,14 +49,16 @@ describe('withdrawals', () => {
 
   test('generates a debit transaction', () => {
     testAccount.withdraw(1);
+    // Check if a transaction is created
     expect(Transaction).toHaveBeenCalledTimes(1);
+    // Check if the transaction created has type debit
     const debitType = 'debit';
     expect(Transaction.mock.calls[0][0]).toEqual(debitType);
   });
 
   test('sets a transaction\'s balance to be equal to the Account balance', () => {
     testAccount.withdraw(1);
-    expect(Transaction.mock.instances[0]['balance']).toEqual(testAccount.balance)
+    expect(Transaction.mock.instances[0].balance).toEqual(testAccount.balance);
   });
 
   test('cannot withdraw below 0', () => {
