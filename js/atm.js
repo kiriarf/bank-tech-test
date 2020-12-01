@@ -5,8 +5,12 @@ class ATM {
     this.account = new Account();
   }
 
-  insert(amount) {
+  deposit(amount) {
     this.account.deposit(amount);
+  }
+
+  withdraw(amount) {
+    this.account.withdraw(amount);
   }
 }
 
