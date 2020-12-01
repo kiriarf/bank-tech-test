@@ -2,8 +2,16 @@ const Transaction = require('./transaction');
 
 class Account {
   constructor() {
-    this.balance = 0;
+    this._balance = 0;
     this.transactions = [];
+  }
+
+  get balance() {
+    return this._balance;
+  }
+
+  set balance(newBalance) {
+    this._balance = newBalance;
   }
 
   deposit(amount) {
