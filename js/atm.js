@@ -15,8 +15,8 @@ class ATM {
   }
 
   printBalance() {
+    // eslint-disable-next-line
     console.log(`Current balance: £${this.account.balance.toFixed(2)}`);
-    // return `Current balance: £${this.account.balance.toFixed(2)}`;
   }
 
   printStatement() {
