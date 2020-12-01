@@ -27,5 +27,5 @@ test('ATM can print a history of transactions', () => {
   testATM.printStatement();
   expect(accountTransactionsSpy).toHaveBeenCalled();
   const today = new Date(Date.now()).toLocaleDateString();
-  expect(consoleSpy).toHaveBeenCalledWith('date || credit || debit || balance', '\n', `${today} || 100.00 || || 100.00\n${today} || || 50.00 || 50.00\n`)
+  expect(consoleSpy).toHaveBeenCalledWith(`date || credit || debit || balance\n${today} || 100.00 || || 100.00\n${today} || || 50.00 || 50.00\n`);
 });
