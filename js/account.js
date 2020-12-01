@@ -3,7 +3,7 @@ const Transaction = require('./transaction');
 class Account {
   constructor() {
     this.currentBalance = 0;
-    this.transactions = [];
+    this.pastTransactions = [];
   }
 
   get balance() {
@@ -12,6 +12,10 @@ class Account {
 
   set balance(newBalance) {
     this.currentBalance = newBalance;
+  }
+
+  get transactions() {
+    return this.pastTransactions
   }
 
   deposit(amount) {
