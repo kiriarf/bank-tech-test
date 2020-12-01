@@ -12,6 +12,10 @@ class ATM {
   withdraw(amount) {
     this.account.withdraw(amount);
   }
+
+  printBalance() {
+    return `Current balance: £${this.account.balance}`;
+  }
 }
 
 module.exports = ATM;

@@ -1,26 +1,22 @@
 const ATM = require('./atm');
-const Account = require('./account');
-
-jest.mock('./transaction');
-jest.mock('./account');
 
 const testATM = new ATM();
-const mockAccount = Account.mock.instances[0];
-const mockAccountDepositFunction = mockAccount.deposit;
-const mockAccountWithdrawFunction = mockAccount.withdraw;
-
-test('an ATM has an account', () => {
-  expect(Account).toHaveBeenCalledTimes(1);
-  expect(testATM).toHaveProperty('account', mockAccount);
-});
 
 test('you can put money into an ATM to make a deposit', () => {
+  const accountDepositFunctionSpy = jest.spyOn(testATM.account, 'deposit');
   testATM.deposit(100);
-  expect(mockAccountDepositFunction.mock.calls[0][0]).toBe(100);
+  expect(accountDepositFunctionSpy).toHaveBeenCalled();
 });
 
-
 test('you can take money from ATM by withdrawing from your account', () => {
+  const accountWithdrawFunctionSpy = jest.spyOn(testATM.account, 'withdraw');
   testATM.withdraw(50);
-  expect(mockAccountWithdrawFunction.mock.calls[0][0]).toBe(50);
+  expect(accountWithdrawFunctionSpy).toHaveBeenCalled();
+});
+
+test('ATM can print out the current balance of the account', () => {
+  const accountBalanceGetterSpy = jest.spyOn(testATM.account, 'balance', 'get');
+  testATM.printBalance();
+  expect(accountBalanceGetterSpy).toHaveBeenCalled();
+  expect(testATM.printBalance()).toEqual('Current balance: £50');
 });
