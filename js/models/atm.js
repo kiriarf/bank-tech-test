@@ -25,7 +25,7 @@ class ATM {
   generateStatement() {
     let statementBody = '';
     let i;
-    for (i = 0; i < this.account.transactions.length; i += 1) {
+    for (i = this.account.transactions.length - 1; i >= 0; i -= 1) {
       const transaction = this.account.transactions[i];
       if (transaction.type === 'credit') {
         statementBody += `${transaction.date} || ${transaction.amount.toFixed(2)} || || ${transaction.balance.toFixed(2)}\n`;
