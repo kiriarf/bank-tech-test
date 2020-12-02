@@ -1,4 +1,4 @@
-const Transaction = require('./transaction');
+const Transaction = require('../models/transaction');
 
 const testCreditTransaction = new Transaction('credit', 500);
 

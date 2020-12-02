@@ -1,16 +1,9 @@
-const Account = require('./account');
-const Transaction = require('./transaction');
+const Account = require('../models/account');
+const Transaction = require('../models/transaction');
 
 const testAccount = new Account();
 
-// let mockTransactionType = jest.fn();
-// jest.mock('./transaction', () => {
-//   return jest.fn().mockImplementation(() => {
-//     return { type: mockTransactionType };
-//   });
-// });
-
-jest.mock('./transaction');
+jest.mock('../models/transaction');
 
 beforeEach(() => {
   Transaction.mockClear();
