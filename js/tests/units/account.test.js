@@ -1,9 +1,9 @@
-const Account = require('../models/account');
-const Transaction = require('../models/transaction');
+const Account = require('../../models/account');
+const Transaction = require('../../models/transaction');
 
 const testAccount = new Account();
 
-jest.mock('../models/transaction');
+jest.mock('../../models/transaction');
 
 beforeEach(() => {
   Transaction.mockClear();

@@ -1,4 +1,4 @@
-const ATM = require('../models/atm');
+const ATM = require('../../models/atm');
 
 const testATM = new ATM();
 const consoleSpy = jest.spyOn(console, 'log');
