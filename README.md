@@ -7,16 +7,19 @@ A simple JavaScript Console app that allows users to query their bank balance, a
 ### How to use
 1. Have Node installed on your machine
 2. Clone this repository: ```git clone git@github.com:kiriarf/bank-tech-test.git && cd bank-tech-test```
-2. In your terminal, run ```node```
-3. In Node console, ```require``` the ```ATM``` file and create an instance of ```ATM``` class: 
+3. Run ```npm install``` to install the dependencies
+4. In your terminal, run ```node```
+5. In Node console, ```require``` the ```ATM``` file and create an instance of ```ATM``` class: 
   ```
-  const ATM = require('./js/atm');
+  const ATM = require('./js/models/atm');
   const myATM = new ATM();
   ```
-4. To deposit £100: ```myATM.deposit(100)```
-5. To withdraw £50: ```myATM.withdraw(50)```
-6. To check balance: ```myATM.printBalance()```
-7. To see a full statement: ```myATM.printStatement()```
+6. To deposit £100: ```myATM.deposit(100)```
+7. To withdraw £50: ```myATM.withdraw(50)```
+8. To check balance: ```myATM.printBalance()```
+9. To see a full statement: ```myATM.printStatement()```
+10. To run tests: ```npm test```
+11. To lint: ```npm run lint```
 
 ### Technologies used
 | Technology | Use                              |
